@@ -1,31 +1,74 @@
 import "./App.css";
-import photo from "./assets/photo.jpg.jpg";
-const student = {
-  nom : "Abderrahmen ",
-  prenom:"ferjani",
-  email:"ferjaniabderahmen5@gmail.com",
-  tlf:"99739313",
-  fliere:"Génie Logiciel et Système d'information",
-  anné:"2026",
-  ville:"mahdia",
-  grp:"glsi2",
-}
-function App(){
-  return(
-    <div className="card">
-      <img src={photo} alt="photo étudiant"/>
-      <h1>Fiche étudiant</h1>
-      <p>Nom et prénom:{student.nom} {student.prenom}</p>
-      <p>Email:{student.email}</p>
-      <p>Téléphone:+216{student.tlf}</p>
-      <p>Filière:{student.fliere}</p>
-      <p>Anné d'étude:{student.anné}</p>
-      <p>Groupe:glsi2</p>
-      <p>Ville :{student.ville}</p>
-      <a href="mailto:ferjaniabderahmen5@gmail.com">
-        <button>Contacter</button>
-      </a>
+import Header from "./components/Header.jsx";
+import Navbar from "./components/Navbar.jsx";
+import StudentCard from "./components/StudentCard.jsx";
+import Footer from "./components/Footer.jsx";
+import studentImage from "./assets/photo.jpg";
 
+function App() {
+  // 4. Tableau contenant plusieurs étudiants
+  const etudiants = [
+    {
+      prenom: "Slim",
+      nom: "Boubaker",
+      email: "slimboubaker@gmail.com",
+      telephone: "+216 99 999 999",
+      filiere: "Génie Logiciel et Systèmes d'Information",
+      anneeEtude: "2ème année",
+      groupe: "GLSI 2",
+      ville: "Mahdia",
+      image: studentImage,
+    },
+    {
+      prenom: "Sarra",
+      nom: "Trabelsi",
+      email: "sarra.trabelsi@gmail.com",
+      telephone: "+216 22 345 678",
+      filiere: "Génie Logiciel et Systèmes d'Information",
+      anneeEtude: "2ème année",
+      groupe: "GLSI 1",
+      ville: "Sousse",
+      image: studentImage,
+    },
+    {
+      prenom: "Mariem",
+      nom: "Khalfallah",
+      email: "mariem.khalfallah@gmail.com",
+      telephone: "+216 27 567 890",
+      filiere: "Génie Logiciel et Systèmes d'Information",
+      anneeEtude: "2ème année",
+      groupe: "GLSI 2",
+      ville: "Tunis",
+      image: studentImage,
+    },
+  ];
+
+  return (
+    <div className="app-container">
+      <Header />
+      <Navbar />
+
+      <main className="main-content">
+        <div className="container">
+          {/* 5 & 6. Utilisation de map() et ajout d'une key unique */}
+          {etudiants.map((etudiant) => (
+            <StudentCard
+              key={etudiant.email}
+              prenom={etudiant.prenom}
+              nom={etudiant.nom}
+              email={etudiant.email}
+              telephone={etudiant.telephone}
+              filiere={etudiant.filiere}
+              anneeEtude={etudiant.anneeEtude}
+              groupe={etudiant.groupe}
+              ville={etudiant.ville}
+              image={etudiant.image}
+            />
+          ))}
+        </div>
+      </main>
+
+      <Footer />
     </div>
   );
 }
