@@ -1,16 +1,55 @@
+/* Style général */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
 }
 
+/* Conteneur principal */
 #root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
 }
 
+/* Sections */
+.form-section,
+.filter-section,
+.students-section {
+  margin: 25px;
+}
+
+/* Formulaire d'ajout */
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 450px;
+}
+
+/* Champs de saisie */
+.form-section input,
+.form-section select,
+.filter-section select {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Boutons du formulaire et des cartes */
+.form-section button,
+.card button {
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+/* Liste des étudiants */
+.students {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Carte étudiant */
 .card {
   width: 350px;
   background-color: white;
@@ -20,6 +59,7 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Image étudiant */
 .card img {
   width: 120px;
   height: 120px;
@@ -28,22 +68,27 @@ body {
   margin-bottom: 15px;
 }
 
-.card h1 {
+/* Titre de la carte */
+.card h1,
+.card h2 {
   color: #3498db;
   font-size: 28px;
   margin-bottom: 20px;
 }
 
+/* Informations étudiant */
 .card p {
   margin: 8px 0;
   font-size: 15px;
   color: #333;
 }
 
+/* Liens */
 .card a {
   text-decoration: none;
 }
 
+/* Boutons */
 .card button {
   margin-top: 15px;
   padding: 10px 20px;
@@ -54,6 +99,15 @@ body {
   cursor: pointer;
 }
 
+/* Effet au survol du bouton */
 .card button:hover {
   background-color: #217dbb;
+}
+
+/* Coordonnées affichées */
+.coordonnees {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
 }
